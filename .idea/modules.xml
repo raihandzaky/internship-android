@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CobaRetrofit.iml" filepath="$PROJECT_DIR$/CobaRetrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/internship-android.iml" filepath="$PROJECT_DIR$/internship-android.iml" />
     </modules>
   </component>
 </project>

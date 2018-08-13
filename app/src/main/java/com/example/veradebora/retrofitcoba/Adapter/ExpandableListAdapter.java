@@ -24,12 +24,13 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     private List<VmObject> listVmTitle;
     private HashMap<VmObject, List<DetailsOfVmObject>> listHashMap;
     private List<DetailsOfVmObject> detailsOfVmObjects;
+    private int index = 0;
 
     public ExpandableListAdapter(Context mContext, List<VmObject> listVmTitle, HashMap<VmObject, List<DetailsOfVmObject>> listHashMap,
                                  List<DetailsOfVmObject> detailsOfVmObjects ) {
         this.mContext = mContext;
-        this.listVmTitle = listVmTitle;
-        this.listHashMap = listHashMap;
+        this.listVmTitle = listVmTitle; // list of header
+        this.listHashMap = listHashMap;//list of content
         this.detailsOfVmObjects = detailsOfVmObjects;
     }
 
@@ -40,7 +41,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return listHashMap.get(listVmTitle.get(groupPosition)).size();
+//        return listHashMap.get(listVmTitle.get(groupPosition)).size();
+        return 1;
     }
 
 
@@ -95,8 +97,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 
-        String Flavor = detailsOfVmObjects.get(childPosition).getFlavor();
-        String Ip = detailsOfVmObjects.get(childPosition).getIpAddress();
+        String Flavor = detailsOfVmObjects.get(groupPosition).getFlavor();
+        String Ip = detailsOfVmObjects.get(groupPosition).getIpAddress();
 
         if (convertView == null){
 

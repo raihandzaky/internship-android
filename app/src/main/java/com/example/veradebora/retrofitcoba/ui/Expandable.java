@@ -43,7 +43,6 @@ public class Expandable extends AppCompatActivity {
         api = UtilsApi.getAPIService();
 
 
-
         SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", Context.MODE_PRIVATE);
         UserId = sharedPreferences.getString("User_id", "");
 
@@ -66,41 +65,39 @@ public class Expandable extends AppCompatActivity {
                     public void onNext(UserVmList userVmList) {
 
 
+                        listVmTitle = new ArrayList<>();
+                        listHashMap = new HashMap<>();
+                        List<DetailsOfVmObject> detailsOfVmObjects = new ArrayList<>();
 
-                    listVmTitle = new ArrayList<>();
-                    listHashMap = new HashMap<>();
-                    List<DetailsOfVmObject> detailsOfVmObjects = new ArrayList<>();
-
-                    for (int i = 0; i < userVmList.getVm_data().size(); i++) {
+                        for (int i = 0; i < userVmList.getVm_data().size(); i++) {
 
 
-                        //loop Listview RowTitle
+                            //loop Listview RowTitle
                             VmObject vmObject = new VmObject(userVmList.getVm_data().get(i).getHostname(),
                                     userVmList.getVm_data().get(i).getStatus(), userVmList.getVm_data().get(i).getImage());
-                        listVmTitle.add(vmObject);
+                            listVmTitle.add(vmObject);
 
-                        //Loop Listview RowChildren
-                        DetailsOfVmObject details = new DetailsOfVmObject(userVmList.getVm_data().get(i).getFlavor(),
-                                userVmList.getVm_data().get(i).getIp_vm());
-                        detailsOfVmObjects.add(details);
+                            //Loop Listview RowChildren
+                            DetailsOfVmObject details = new DetailsOfVmObject(userVmList.getVm_data().get(i).getFlavor(),
+                                    userVmList.getVm_data().get(i).getIp_vm());
+                            detailsOfVmObjects.add(details);
 
-                        //loop hashmap
-                        listHashMap.put(listVmTitle.get(i),detailsOfVmObjects);
-                    }
-
+                            //loop hashmap
+                            listHashMap.put(listVmTitle.get(i), detailsOfVmObjects);
+                        }
 
 
                         LayoutInflater layoutInflater = getLayoutInflater();
-                        ViewGroup header = (ViewGroup)layoutInflater.inflate(R.layout.listview_header,expandableListView,false);
+                        ViewGroup header = (ViewGroup) layoutInflater.inflate(R.layout.listview_header, expandableListView, false);
                         expandableListView.addHeaderView(header);
 
 
-                    ExpandableListAdapter adapter = new ExpandableListAdapter(mContext, listVmTitle,listHashMap,detailsOfVmObjects);
-                    expandableListView.setAdapter(adapter);
+                        ExpandableListAdapter adapter = new ExpandableListAdapter(mContext, listVmTitle, listHashMap, detailsOfVmObjects);
+                        expandableListView.setAdapter(adapter);
 
-                    expandableListView.setOnGroupClickListener((parent, v, groupPosition, id) -> false);
+                        expandableListView.setOnGroupClickListener((parent, v, groupPosition, id) -> false);
 
-                        }
+                    }
                 });
 
     }
