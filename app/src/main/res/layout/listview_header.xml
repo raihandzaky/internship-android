@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--hostname Status Os-->
+    <TextView
+        android:id="@+id/HostHead"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_weight="1"
+        android:background="#c5c7c9"
+        android:gravity="center"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:paddingLeft="?android:expandableListPreferredItemPaddingLeft"
+        android:text="Hostname"></TextView>
+
+    <TextView
+        android:id="@+id/StatusHead"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:paddingLeft="?android:expandableListPreferredItemPaddingLeft"
+        android:background="#c5c7c9"
+        android:textSize="17dp"
+        android:text="Status"></TextView>
+
+    <TextView
+        android:id="@+id/OsHead"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:paddingLeft="?android:expandableListPreferredItemPaddingLeft"
+        android:text="Os"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:gravity="center"
+        android:background="#c5c7c9"
+        android:layout_weight="1">
+    </TextView>
+</LinearLayout>

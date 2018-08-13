@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--hostname os status-->
+    <TextView
+        android:id="@+id/FirstText1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="?android:expandableListPreferredItemPaddingLeft"
+        android:text="First"
+        android:gravity="center"
+        android:layout_weight="1">
+    </TextView>
+
+    <TextView
+        android:id="@+id/SecondText2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Second"
+        android:paddingLeft="?android:expandableListPreferredItemPaddingLeft"
+        android:gravity="center"
+        android:layout_weight="1">
+    </TextView>
+
+    <TextView
+        android:id="@+id/ThirdText3"
+        android:layout_width="0dp"
+        android:paddingLeft="?android:expandableListPreferredItemPaddingLeft"
+        android:layout_height="wrap_content"
+        android:text="Third"
+        android:gravity="center"
+        android:layout_weight="1">
+    </TextView>
+</LinearLayout>
